@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html> <head>
+    <title>pop & zap</title> <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style></head>
+
+
+
+
+<body>
+    <h1>Lokesh Pentyala builds a stack</h1>
+    <label for="name">Input Element: </label><input id="name" type="text"></input><br><br>
+		<div class="flex-container" id="target">
+            <div class="stack">stack1</div>   
+            <div class="stack">stack2</div>  
+            <div class="stack">stack3</div>  
+		</div>
+	
+        <p> Press the button to create an new element of type div and then add it to the container.</p>
+        <button onclick="makeNewDiv()">Push value</button>
+	
+</body>
+<script>
+	function makeNewDiv(){
+		/* make the div and its text */
+		let element = document.createElement("div");
+		element.innerHTML = document.getElementById("name").value;
+		element.className = "stack";
+
+		/* add it to the container */
+		document.getElementById('target').appendChild(element)
+		
+	}
+    </script>
+
+	
+
+</script>
+</html>	
